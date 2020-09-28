@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Selector por Tipo */
+    p:first-child{
+        color: green;
+    }
+    p:last-of-type{
+        color: rgb(128, 63, 63);
+    }
+    p:nth-child(2n){
+        color: red;
+    }
+    p:nth-child(2n+1){
+        color: blue;
+    }
+    p::first-letter{
+        color: red;
+        font-size: 20px ;
+    }
+    /* Selector por clase */
+    .saludo{
+        font-size: 2em;
+    }
+    /* Selector por ID */
+    #id{
+        color: green;
+    }
+</style>
+<body>
+    <p>Rana</p>
+    <p>🦄 Unicornio</p>
+    <p>🦐 Camarón</p>
+    <p>🐌 Caracol</p>
+</body>
+</html>

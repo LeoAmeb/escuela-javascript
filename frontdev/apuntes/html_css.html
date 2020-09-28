@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html_css.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="introducci%C3%B3n">Introducción</h1>
+<h2 id="la-internet"><strong>La internet</strong></h2>
+<p>La internet nació en los 80 es un conjunto de dos palabras
+Interconnected y Network
+Red inmensa de computadoras conectadas a través del mundo</p>
+<h2 id="consorcio-w3c"><strong>Consorcio W3C</strong></h2>
+<p>Estandar de las tecnologías utilizadas para el buen uso de la internet</p>
+<ul>
+<li>
+<p>HTTP - Protocolo de transferencia de hipertexto</p>
+</li>
+<li>
+<p>URL - Localizador de Recursos Uniforme</p>
+</li>
+<li>
+<p>HTML - Lenguaje de marcado de hipertextos</p>
+</li>
+</ul>
+<h2 id="%C2%BFqu%C3%A9-es-html-y-css"><strong>¿Qué es HTML y CSS?</strong></h2>
+<ul>
+<li>
+<h3 id="html"><em><strong>HTML</strong></em></h3>
+<blockquote>
+<p>Html es una lenguaje de marcado para decirle al navegador cómo estructurar las páginas web que se visitan. No es un lenguaje de programación.</p>
+</blockquote>
+</li>
+<li>
+<h3 id="css"><em><strong>CSS</strong></em></h3>
+<blockquote>
+<p>CSS es un lenguaje que permite crear páginas web con un diseño agradable para los usuarios. Tampoco es un lenguaje de programación.</p>
+</blockquote>
+</li>
+<li>
+<h2 id="dom"><em><strong>DOM</strong></em></h2>
+<blockquote>
+<p>Documento Object Model es una transformación del código HTML escrito por nosotros a objetos entendibles para el navegador</p>
+</blockquote>
+</li>
+<li>
+<h2 id="cssom"><em><strong>CSSOM</strong></em></h2>
+<blockquote>
+<p>Así como el DOM para el HTML, EL CSSOM es una representación de objetos de nuestros estilos en CSS.</p>
+</blockquote>
+</li>
+<li>
+<h2 id="render-tree"><em><strong>Render Tree</strong></em></h2>
+<blockquote>
+<p>Es la unión entre el DOM y el CSSOM para renderizar todo el código de nuestra página web.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="pasos-que-sigue-el-navegador-para-construir-las-p%C3%A1ginas-web"><strong>Pasos que sigue el navegador para construir las páginas web</strong></h2>
+<ol>
+<li>Procesa el HTML para construir el DOM</li>
+<li>Procesa el CSS para construir el CSSOM</li>
+<li>El DOM se une con el CSSOM para crear el Render Tree</li>
+<li>Se aplican los estilos CSS en el Render Tree</li>
+<li>Se &quot;Pintan&quot; los nodos en la pantalla para que el usuario vean el contenido de la página web.</li>
+</ol>
+<h1 id="tips-para-aprender-css">Tips para aprender CSS</h1>
+<p><img src="md_img/infografia-css.webp" alt="Tips para aprender CSS" title="Tips para aprender CSS"></p>
+<h1 id="anatom%C3%ADa-de-un-elemento-html">Anatomía de un elemento HTML</h1>
+<blockquote>
+<p><strong>Los elementos HTML se componen de:</strong></p>
+<blockquote>
+<ul>
+<li><em><strong>Etiqueda de apertura:</strong></em> El nombre de nuestra etiqueta encerrado entre símbolos de mayor o menos. Por ejemplo <code>&lt;h1&gt;</code></li>
+<li><em><strong>Contenido:</strong></em> Dentro de nuestras etiquetas podemos añadir texto u otros elementos HTML, lo que conocemos como anidamiento.</li>
+<li><em><strong>Etiqueta de cierre:</strong></em> Son casi iguales que los contenidos de apertura pero también necesitan un slash (/) antes del nombre de la etiqueta por ejemplo <code>&lt;/h1&gt;</code></li>
+</ul>
+</blockquote>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>&lt;p&gt; 
+    &lt;a&gt; Esto es un link dentro de un parrafo &lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+<ul>
+<li>
+<p>Las etiquetas de apertura también pueden tener atributos. Los atributos nos permiten definir características especiales para nuestros elementos. &lt;etiqueta atributo=&quot;Valor del atributo&quot;&gt;. Por ejemplo
+<code>&lt;h1 class=&quot;saludo&quot;&gt;</code></p>
+</li>
+<li>
+<p>También existen elementos vacíos. Estos elementos no tienen contenido ni etiqueta de cierre, solo etiqueta de apertura y atributos. Por ejemplo:
+<code>&lt;img src=&quot;puppy.png&quot; alt=&quot;mi mascota&quot;&gt;</code></p>
+</li>
+</ul>
+<h1 id="terminos-css">Terminos CSS</h1>
+<h2 id="displays">Displays</h2>
+<ul>
+<li>
+<p>Block</p>
+<ul>
+<li>Representa al flujo que tenemos cada que escribimos. Por ejemplo, nosotos escribimos de izquierda a derecha, pero cuando se nos acaba el espacio horizontalmente, seguimos abajo. Este es el flujo de bloque, en nuestra escritura (de arriba a abajo) y es exactamente el que obedece display block, lo que quiere decir que los elementos se visualizan uno debajo del otro.</li>
+</ul>
+</li>
+<li>
+<p>Inline</p>
+<ul>
+<li>
+<p>Representa a la línea base que seguimos para escribir, que en el caso del latín es de izquierda a derecha. Por lo tanto, todos los elementos con este display se visualizarán uno del lado del otro de izquierda a derecha.</p>
+</li>
+<li>
+<p>Algunos elementos que por defecto tienen este tipo de display son: &lt;span&gt;  &lt;em&gt; y &lt;b&gt;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Inline-block</p>
+<ul>
+<li>Este display es muy similar al display inline, sin embargo este respeta el width y el height que se le asigne a los elementos.</li>
+</ul>
+</li>
+<li>
+<p>None</p>
+<ul>
+<li>Este display es utilizado para ocultar elementos sin eliminarlos por completo del DOM.</li>
+</ul>
+</li>
+<li>
+<p>Table</p>
+<ul>
+<li>Los elementos con este display se comportan como los elementos &lt;table&gt;</li>
+</ul>
+</li>
+<li>
+<p>Flex</p>
+<ul>
+<li>
+<p>Centra elementos, alinearlos a la derecha o a la izquierda, siempre ha sido una tarea difícil. Sin embargo, llega flexbox para ayudarnos con este dilema. Para usar flexbox es <strong>Indispensable</strong> la propiedad <strong>display</strong>: flex en el elemento padre que por defecto alineará los elementos hijos de izquierda a derecha. También, este display suele acompañarse por otras propiedades como justify-content y align-items.</p>
+</li>
+<li>
+<p>Trabajar con flexbox no basta sólo con escribir <em>display: flex</em>, también es muy importante que entendamos cómo funciona y para ello se puede dar una revisada a la siguiente documentación:</p>
+</li>
+<li>
+<p>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Grid</p>
+<ul>
+<li>
+<p>Después de flexbox, llega el más poderoso sistema de layout: CSS Grid y para implementarlo debemos hacer uso de display: grid en el elemento contenedor o elemento padre.</p>
+</li>
+<li>
+<p>Al igual que con el flexbox, CSS Grid requeire de un estudio adicional ya que no basta con colocar este display. Para ello, está la siguiente documentación:</p>
+</li>
+<li>
+<p>https://css-tricks.com/snippets/css/complete-guide-grid/</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="funciones-de-las-propiedades-css-m%C3%A1s-usadas">Funciones de las propiedades CSS más usadas</h2>
+<ul>
+<li>
+<p><strong>Width:</strong> Define el ancho de los elemento. Por ejemplo <code> width: 20px;</code></p>
+</li>
+<li>
+<p><strong>Height:</strong> Define el alto de un elemento. Por ejemplo <code>height: 20px;</code></p>
+</li>
+<li>
+<p><strong>Background:</strong> Puede definir el color de fondo o la url de fondo de un elemento. Por ejemplo: <code>background: url(':puppy.png';)</code></p>
+</li>
+<li>
+<p><strong>backgorund-color:</strong> Define el color de fondo de un elemento. Por ejemplo: <code>background-color: red;</code></p>
+</li>
+<li>
+<p>Color: Define el color de nuestros textos. Estos colores lo podemos escribir de 3 formas en CSS:</p>
+<ul>
+<li>Con los <strong>nombres de los colores</strong>. Por ejemplo: <em>black</em>, <em>red</em>, <em>green</em>.</li>
+<li><strong>Sistema Hexadecimal</strong>: Donde blanco se define como <code>#FFFFFF</code> y negro como #000000. Colorhunt.co es una página interesante para obtener colores.</li>
+<li><strong>RGB</strong> Donde la R significa Red, G significa Green y B significa Blue; por lo que escribimos rgb(red, green, blue) y cada uno de ellos es un valor de 0 a 255 que describe la intensidad de ese color. Por ejemplo, para denotar el color verde escribimos (0,255,0). También a estos valores se les puede agregar una opacidad (transparencia) que va de 0 a 1, por ejemplo: rgba(0,255,0,0.5) lo que quiere decir que el color verde lo queremos con una transparencia del 50%.</li>
+</ul>
+</li>
+<li>
+<p><strong>Border:</strong> Define el tamaño, estilo y color del borde de un elemento. Por ejemplo <code>border: 2px solid yellow;</code></p>
+</li>
+<li>
+<p><strong>border-radius:</strong> Define qué tan redondeado quiero mi elemeno. Por ejemplo: <code>border-radius: 20px;</code></p>
+</li>
+<li>
+<p><strong>margin:</strong> Define la margen de un elemento. Por ejemplo: <code>margin: 2px;</code>(lo que queire decir que mi elemento tendrá márgenes de todos sus lados de 2px).
+Si quiero que mi elemento tenga margen superior de 2px, margen inferior de 4px, margen derecha de 3px y margen izquierda de 5px, lo escribiría de la siguiente forma: <code>margin: 2px 3px 4px 5px</code>. El primer valor es la margen superior y siempre va en sentido a las manecillas del reloj.</p>
+</li>
+</ul>
+
+</body>
+</html>
