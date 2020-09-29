@@ -108,6 +108,45 @@
     ::placeholder{
         color: white;
     }
+
+    /* Configuracion de carrusel */
+    .carousel{
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+    .carousel__container{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+
+    .carousel__item{
+        background-color: turquoise;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+    }
+
+    .carousel__item:hover ~ .carousel__item {
+        transition: translate3d(100px, 0, 0);
+    }
+
+    .carousel__container:hover .carousel__item{
+        opacity: 0.3;
+    }
+
+    .carousel__container:hover .carousel__item:hover{
+        transform: scale(1.5);
+        opacity: 1;
+    }
 </style>
 <body>
     <!-- Inicio de header -->
@@ -139,5 +178,17 @@
         <input class="input" type="text" placeholder="Buscar...">
     </section>
     <!-- Fin de buscador -->
+
+    <!-- Inicio carrusel de imagenes -->
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel__item"></div>
+            <div class="carousel__item"></div>
+            <div class="carousel__item"></div>
+
+        </div>
+
+    </section>
+    <!-- Fin de carrusel de imagenes -->
 </body>
 </html>
