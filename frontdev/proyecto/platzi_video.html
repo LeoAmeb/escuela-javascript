@@ -7,21 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400&display=swap" rel="stylesheet"> 
 </head>
 <style>
+    /* Configuraciones globales del sitio */
     body{
         margin: 0px;
         font-family: 'Muli', sans-serif;
-        background-color: #AB88FF;
+        background-color:#8F57FD;
     }
 
+    /* Configuraciones del header */
     .header{
-        background-color: #AB88FF;
+        background-color:#8F57FD;
         width: 100%;
         height: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
     .header__img{
         width: 200px;
         margin-top: 10px;
@@ -75,20 +76,68 @@
         margin-right: 0px;
         color: white;
     }
+
+    /* Configuraciones de main */
+    .main{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        justify-content: center;
+
+    }
+
+    .main__title{
+        color: white;
+        font-size: 25px;
+    }
+
+    .input{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid white;
+        border-radius: 2rem;
+        color: rgb(61, 12, 12);
+        font-family: 'Muli', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        outline: white;
+        padding: 0px 20px;
+        width: 70%;
+
+    }
+    ::placeholder{
+        color: white;
+    }
 </style>
 <body>
+    <!-- Inicio de header -->
     <header class="header">
+        <!-- Imagen de logo de platzi -->
         <img class="header__img" src="img/logo-platzi-video-BW2.png" alt="">
+        <!-- Inicio de header menu -->
         <div class="header__menu">
+            <!-- Inicio de menu de perfil -->
             <div class="header__menu--profile">
                 <img src="./img/user-icon.png" alt="User">
                 <p>perfil</p>
             </div>
+            <!-- Inicio listado de opcion de menu de perfil -->
             <ul>
                 <li><a href="/">Cuenta</a></li>
                 <li><a href="/">Cerrar sesión</a></li>
             </ul>
+            <!-- Fin listado de opcion de menu de perfil -->
+            <!-- Fin de menu de perfil -->
         </div>
+        <!-- Fin de header menu -->
     </header>
+    <!-- Fin de header -->
+
+    <!-- Inicio de buscador -->
+    <section class="main">
+        <h2 class="main__title">¿Qué quieres ver hoy?</h2>
+        <input class="input" type="text" placeholder="Buscar...">
+    </section>
+    <!-- Fin de buscador -->
 </body>
 </html>
